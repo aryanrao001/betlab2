@@ -1,3 +1,4 @@
+import React from 'react';
 import { Heart, Gift, Wallet, User, Gamepad2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,8 +8,8 @@ const Footer = () => {
   const navItems = [
     { name: 'Promotion', icon: <Heart className="w-5 h-5" />, path: '/promotion' },
     { name: 'Activity', icon: <Gift className="w-5 h-5" />, path: '/activity' },
-    { name: 'Game', icon: <Gamepad2 className="w-8 h-8 text-amber-500 " />, path: '/game' },
-    { name: 'Wallet', icon: <Wallet className="w-5 h-5" />, path: '/' },
+    { name: 'Game', icon: <Gamepad2 className="w-8 h-8 text-amber-500 " />, path: '/home' },
+    { name: 'Wallet', icon: <Wallet className="w-5 h-5" />, path: '/wallet' },
     { name: 'Account', icon: <User className="w-5 h-5" />, path: '/account' },
   ];
 

@@ -8,6 +8,8 @@ import Match from './components/Match';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Protected from './components/Protected';
+import  Wallet  from './pages/Wallet';
+// import Header from './components/header';
 
 
 const App = () => {
@@ -24,20 +26,14 @@ const App = () => {
             <Route path="/match/:id" element={
               <Protected> <Match/> </Protected>
               } />
+            <Route path="/wallet" element={
+              <Protected> <Wallet/> </Protected>
+            } />
+
+
             </Routes>
         </Router>
-        <ToastContainer 
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+        <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false}        newestOnTop={false}        closeOnClick        rtl={false}        pauseOnFocusLoss        draggable        pauseOnHover        theme="colored"      />
        </div>
     </div>
   )
