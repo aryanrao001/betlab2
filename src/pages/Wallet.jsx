@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Header from '../components/header';
 import Footer from '../components/Footer';
+// import Header from '../components/Header';
 import axios from 'axios';
 import { AllContext } from '../context/AllContext';
+import Header2 from '../components/Header2';
 
 const Wallet = () => {
   const [balance, setBalance] = useState('');
@@ -54,7 +55,7 @@ const Wallet = () => {
 
   return (
     <div className="w-full h-screen flex flex-col bg-gradient-to-b from-zinc-900 to-black text-white">
-      <Header />
+      <Header2 />
 
       <div className="flex-1 flex flex-col items-center px-4 py-6 space-y-6 overflow-auto">
         <div className="w-full max-w-md bg-zinc-800 rounded-2xl p-6 shadow-lg">

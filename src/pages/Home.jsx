@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Category from '../components/Category';
 import Lottery from '../components/Lottery';
@@ -8,6 +8,7 @@ import SuperJackpot from '../components/SuperJacker';
 import Slots from '../components/Slots';
 import Footer from '../components/Footer';
 import { AllContext } from '../context/AllContext';
+import Header2 from '../components/Header2';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -64,7 +65,7 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <Header2 />
       <Banner data={matchdata?.status1} data2={matchdata?.status3} />
       <Category />
       <Lottery />
