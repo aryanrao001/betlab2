@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Category from '../components/Category';
 import Lottery from '../components/Lottery';
