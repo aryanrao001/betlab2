@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Header from './header';
+// import Header from './header';
 import Footer from './Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { AllContext } from '../context/AllContext';
 import { toast } from 'react-toastify';
+import Header2 from './Header2';
 
 const Match = () => {
   const { id } = useParams();
@@ -122,7 +123,7 @@ const Match = () => {
 
   return (
     <div className="w-full min-h-screen bg-black text-white flex flex-col">
-      <Header />
+      <Header2 />
       <form onSubmit={onSubmitHandler} className="px-4 py-6">
         <div className="text-center text-sm mb-4">
           <span className="text-green-500 text-2xl font-semibold">Ball Event:</span>
