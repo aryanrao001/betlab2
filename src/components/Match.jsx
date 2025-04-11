@@ -84,25 +84,25 @@ const Match = () => {
     fetchData();
   }, [id]);
 
-  useEffect(() => {
-    const ws = new WebSocket(
-      'ws://webhook.entitysport.com:8087/connect?token=7b5e8407ec97bb503e1a7d0c66441c43'
-    );
+  // useEffect(() => {
+  //   const ws = new WebSocket(
+  //     'ws://webhook.entitysport.com:8087/connect?token=7b5e8407ec97bb503e1a7d0c66441c43'
+  //   );
 
-    ws.onopen = () => console.log('WebSocket connected');
-    ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      console.log('Live Data:', data);
-      if(data.response.match_id == id || !data.response.ball_event   ){
-        setLiveData(data);
-      }
-      // setLiveData(data);
-    };
-    ws.onerror = (error) => console.error('WebSocket Error:', error);
-    ws.onclose = () => console.log('WebSocket disconnected');
+  //   ws.onopen = () => console.log('WebSocket connected');
+  //   ws.onmessage = (event) => {
+  //     const data = JSON.parse(event.data);
+  //     console.log('Live Data:', data);
+  //     if(data.response.match_id == id || !data.response.ball_event   ){
+  //       setLiveData(data);
+  //     }
+  //     // setLiveData(data);
+  //   };
+  //   ws.onerror = (error) => console.error('WebSocket Error:', error);
+  //   ws.onclose = () => console.log('WebSocket disconnected');
 
-    return () => ws.close();
-  }, [id]);
+  //   return () => ws.close();
+  // }, [id]);
 
   useEffect(() => {
     if (selectedBet?.odds && betAmount && parseFloat(betAmount) >= 100) {
