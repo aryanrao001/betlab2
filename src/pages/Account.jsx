@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import { FaUserCircle, FaWallet, FaCog, FaSignOutAlt, FaHistory } from 'react-icons/fa';
 import { AllContext } from '../context/AllContext';
 import { useNavigate } from 'react-router';
+import { BiCoinStack } from "react-icons/bi";
+
 
 const Account = () => {
   const {
@@ -48,7 +50,7 @@ const Account = () => {
               <FaWallet className="text-2xl text-green-400" />
               <span className="text-lg font-medium text-white">Wallet Balance</span>
             </div>
-            <span className="text-xl font-bold text-green-300">{balance}</span>
+            <span className="text-xl font-bold text-green-300 flex items-center gap-1 "><BiCoinStack/>{balance}</span>
           </div>
         </div>
 
@@ -85,11 +87,11 @@ const Account = () => {
                       <span className="text-xs text-gray-500 mt-1">{time}</span>
                     </div>
                     <span
-                      className={`text-md font-semibold ${
+                      className={`text-md font-semibold flex items-center gap-1 ${
                         item.mode === 'debit' ? 'text-red-400' : 'text-green-400'
                       }`}
                     >
-                      {item.mode === 'debit' ? `-₹${item.bet_amount}` : `+₹${item.bet_amount}`}
+                      {item.mode === 'debit' ? `-  ${item.bet_amount}` : `+${item.bet_amount}`}<BiCoinStack/>
                     </span>
                   </li>
                 );

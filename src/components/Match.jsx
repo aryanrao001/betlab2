@@ -6,6 +6,7 @@ import axios from 'axios';
 import { AllContext } from '../context/AllContext';
 import { toast } from 'react-toastify';
 import Header2 from './Header2';
+import { BiCoinStack } from "react-icons/bi";
 
 const Match = () => {
   const { id } = useParams();
@@ -156,6 +157,8 @@ const Match = () => {
         console.warn("⚠️ Server responded with error:", response.data);
         alert(response.data.msg || "Something went wrong");
       }
+      setSelectedBet(null);
+
     } catch (error) {
       console.error("❌ API call failed:", error.response ? error.response.data : error);
       alert("Failed to place bet. Please try again.");
@@ -333,14 +336,14 @@ useEffect(() => { console.log(questions) }, [questions])
               <p><strong>Odds:</strong> {selectedBet.odds}</p>
               <p><strong>Condition:</strong> {selectedBet.condition}</p>
               <p><strong>You selected:</strong> <span className="text-yellow-400">{selectedBet.type}</span></p>
-              <p>
-                <strong> Amount + Profit : </strong> <span> {
+              <p className='flex ' >
+                <strong> Coins + Profit : </strong> <span className='flex  items-center' > {
                    betAmount && parseFloat(betAmount) >= 100 ? (
                     <>
                       <span>
                         {betAmount} + {calculateProfit(selectedBet.odds, betAmount) - parseFloat(betAmount)} =
                       </span>{' '}
-                      ₹ {calculateProfit(selectedBet.odds, betAmount)}
+                      <BiCoinStack /> {calculateProfit(selectedBet.odds, betAmount)}
                     </>
                   ) : (
                     'Minimum amount should be ₹100'
@@ -381,8 +384,11 @@ useEffect(() => { console.log(questions) }, [questions])
                   ? 'bg-gray-600 text-white cursor-not-allowed'
                   : 'bg-green-500 hover:bg-green-600 text-black'
               }`}
-              
 
+
+
+              // onClick={()=>selectedBet(null)}
+              
             />
               {/* ✅ Confirm Bet */}
             {/* </button> */}
