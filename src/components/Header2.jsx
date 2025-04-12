@@ -28,12 +28,12 @@ const Header2 = () => {
         </div>
 
         {/* Logout Button */}
-        <button 
+        {/* <button 
           onClick={handleLogout} 
           className='bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700'
         >
           Logout
-        </button>
+        </button> */}
       </div>
     </div>
   );
