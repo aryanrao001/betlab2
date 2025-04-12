@@ -44,7 +44,7 @@ const Login = () => {
 
       if (userId && !isNaN(userId)) {
         localStorage.setItem("user_id", userId);
-        navigate('/home');
+        navigate('/');
       } else {
         toast.error("Invalid user ID. Access denied.");
       }
@@ -62,7 +62,7 @@ const Login = () => {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <div className="flex items-center gap-2 px-4 py-3">
-        <Link to='/home' ><ChevronLeft /></Link>
+        <Link to='/' ><ChevronLeft /></Link>
         <h1 className="text-2xl font-bold text-yellow-400 mx-auto">79 Club</h1>
       </div>
 

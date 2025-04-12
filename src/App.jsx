@@ -9,6 +9,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Protected from './components/Protected';
 import  Wallet  from './pages/Wallet';
+import Account from './pages/Account';
+import Activity from './pages/Activity';
+import Promotion from './pages/Promotion';
 // import Header from './components/header';
 
 
@@ -18,8 +21,8 @@ const App = () => {
        <div>
         <Router>
           <Routes>
-            <Route path="/" element={  <Login />} />
-            <Route path="/home" element={
+            <Route path="/login" element={  <Login />} />
+            <Route path="/" element={
                <Home/> 
               } />
             <Route path="/register" element={<Register/>} />
@@ -28,6 +31,15 @@ const App = () => {
               } />
             <Route path="/wallet" element={
               <Protected> <Wallet/> </Protected>
+            } />
+            <Route path="/account" element={
+              <Protected> <Account/> </Protected>
+            } />
+            <Route path="/activity" element={
+              <Protected> <Activity/> </Protected>
+            } />
+            <Route path="/promotion" element={
+              <Protected> <Promotion/> </Protected>
             } />
 
 
